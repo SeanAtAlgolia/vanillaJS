@@ -22,6 +22,15 @@ search.addWidgets([
 
   hits({
     container: "#hits",
+    templates: {
+      item: `
+      <h2>
+        {{ __hitIndex }}:
+        {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
+      </h2>
+      <p>{{ description }}</p>
+    `,
+    },
   }),
 ]);
 
